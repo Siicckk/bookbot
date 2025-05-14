@@ -10,4 +10,15 @@ def num_character(book_text):
         else:
             word_count[char] = 1
     return word_count
+def sorted_chars_list(char_dict):
+    def sort_on(dict_item):
+        return dict_item["num"]
 
+    result_list = []
+
+    for char, count in char_dict.items():
+        char_info = {"char": char, "num": count}
+        result_list.append(char_info)
+
+    result_list.sort(reverse=True, key=sort_on)
+    return result_list
